@@ -42,18 +42,17 @@ td {
   transition: border-color 0.3s ease;
 }
 
-.subrows {
-  text-align: center;
+.nav-item { 
+  text-align: center; 
 }
 
-.center-subrow {
-  width: 100%;
+.nav-spacer { 
+  width: 100%; 
 }
 
-.table-name {
-  margin-top: 0;
-  font-weight: 800;
-  margin-bottom: 0;
+.site-title { 
+  margin: 0; 
+  font-weight: 800; 
 }
 
 .content {
@@ -85,6 +84,7 @@ pre {
   font-weight: 700;
   font-size: 1.2em;
   color: #005fcc;
+  text-align: justify;
 }
 
 .pub-item {
@@ -93,11 +93,13 @@ pre {
   border-radius: 6px;
   border-left: 3px solid #005fcc;
   transition: background-color 0.3s ease, border-left-color 0.3s ease;
+  text-align: justify;
 }
 
 .pub-title {
   font-weight: 500;
   margin-bottom: 5px;
+  text-align: justify;
 }
 
 .pub-authors {
@@ -105,6 +107,7 @@ pre {
   color: #555;
   margin-bottom: 3px;
   transition: color 0.3s ease;
+  text-align: justify;
 }
 
 .pub-journal {
@@ -112,25 +115,30 @@ pre {
   font-style: italic;
   color: #777;
   transition: color 0.3s ease;
+  text-align: justify;
 }
 
 /* =============================================================================
    CONTACT INFO
    ============================================================================= */
 
+/* Dynamic contact layout - no media queries needed! */
 .contact-info {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 5px 20px; /* 5px vertical gap when wrapped, 20px horizontal when side-by-side */
   justify-content: space-between;
+  margin-top: 25px;
 }
 
 .contact-item {
-  margin: 25px 0;
+  margin: 0; /* Remove individual margins */
   display: flex;
   align-items: center;
   gap: 8px;
+  flex: 0 1 auto; /* Don't grow, can shrink, auto basis */
 }
+
 
 /* =============================================================================
    INTERACTIVE ELEMENTS
@@ -230,12 +238,6 @@ pre {
   }
 }
 
-@media (max-width: 480px) {
-  .contact-info {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
 
 @media print {
   body {
@@ -249,4 +251,228 @@ pre {
     color: #000;
     background-color: #fff;
   }
+}
+
+/* =============================================================================
+   PRISM.JS SYNTAX HIGHLIGHTING WITH BLENDED LANGUAGE LABELS
+   Replace the language label section in your styles.css with this
+   ============================================================================= */
+
+/* Base code styling */
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  direction: ltr;
+  text-align: left;
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  color: #24292e;
+  background: none;
+}
+
+/* Code blocks with blended language labels */
+pre[class*="language-"] {
+  padding: 16px;
+  margin: 16px 0;
+  overflow-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  position: relative;
+  /* Minimal extra padding at top for label */
+  padding-top: 18px;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: rgba(175, 184, 193, 0.2);
+  white-space: normal;
+}
+
+/* Blended language labels - seamlessly integrated into border */
+pre[class*="language-"]:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: #e1e4e8;
+  color: #586069;
+  padding: 4px 12px 4px 12px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  border: 1px solid #e1e4e8;
+  border-bottom: none;
+  border-radius: 0 6px 0 6px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 1;
+  /* Blend with the code block */
+  border-bottom: 1px solid #f6f8fa;
+}
+
+/* Language-specific labels */
+pre[class*="language-python"]:before { content: "Python"; }
+pre[class*="language-javascript"]:before { content: "JavaScript"; }
+pre[class*="language-css"]:before { content: "CSS"; }
+pre[class*="language-html"]:before { content: "HTML"; }
+pre[class*="language-bash"]:before { content: "Bash"; }
+pre[class*="language-json"]:before { content: "JSON"; }
+pre[class*="language-yaml"]:before { content: "YAML"; }
+pre[class*="language-markdown"]:before { content: "Markdown"; }
+pre[class*="language-r"]:before { content: "R"; }
+pre[class*="language-sql"]:before { content: "SQL"; }
+
+/* Syntax highlighting tokens */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6a737d;
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #24292e;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #005cc5;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #032f62;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #d73a49;
+  font-weight: 600;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #d73a49;
+  font-weight: 600;
+}
+
+.token.function,
+.token.class-name {
+  color: #6f42c1;
+  font-weight: 600;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e36209;
+}
+
+/* =============================================================================
+   DARK MODE SYNTAX HIGHLIGHTING WITH BLENDED LABELS
+   ============================================================================= */
+
+.dark-mode code[class*="language-"],
+.dark-mode pre[class*="language-"] {
+  color: #e6edf3;
+}
+
+.dark-mode pre[class*="language-"] {
+  background: #161b22;
+  border-color: #30363d;
+}
+
+.dark-mode :not(pre) > code[class*="language-"] {
+  background: rgba(110, 118, 129, 0.4);
+}
+
+/* Dark mode blended language labels */
+.dark-mode pre[class*="language-"]:before {
+  background: #30363d;
+  color: #7d8590;
+  border-color: #30363d;
+  border-bottom: 1px solid #161b22;
+}
+
+.dark-mode .token.comment,
+.dark-mode .token.prolog,
+.dark-mode .token.doctype,
+.dark-mode .token.cdata {
+  color: #8b949e;
+}
+
+.dark-mode .token.punctuation {
+  color: #e6edf3;
+}
+
+.dark-mode .token.property,
+.dark-mode .token.tag,
+.dark-mode .token.boolean,
+.dark-mode .token.number,
+.dark-mode .token.constant,
+.dark-mode .token.symbol,
+.dark-mode .token.deleted {
+  color: #79c0ff;
+}
+
+.dark-mode .token.selector,
+.dark-mode .token.attr-name,
+.dark-mode .token.string,
+.dark-mode .token.char,
+.dark-mode .token.builtin,
+.dark-mode .token.inserted {
+  color: #a5d6ff;
+}
+
+.dark-mode .token.operator,
+.dark-mode .token.entity,
+.dark-mode .token.url,
+.dark-mode .language-css .token.string,
+.dark-mode .style .token.string {
+  color: #ff7b72;
+}
+
+.dark-mode .token.atrule,
+.dark-mode .token.attr-value,
+.dark-mode .token.keyword {
+  color: #ff7b72;
+}
+
+.dark-mode .token.function,
+.dark-mode .token.class-name {
+  color: #d2a8ff;
+}
+
+.dark-mode .token.regex,
+.dark-mode .token.important,
+.dark-mode .token.variable {
+  color: #ffa657;
 }
