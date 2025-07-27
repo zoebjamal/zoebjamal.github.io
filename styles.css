@@ -1,3 +1,7 @@
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -6,15 +10,27 @@ html {
 body {
   font-family: 'JetBrains Mono', monospace;
   max-width: 80ch;
-  margin: 0 auto;        /* center horizontally, no outside vertical margin */
-  padding: 15px 5px 0;   /* 15px padding top to push content down */
+  margin: 0 auto;
+  padding: 15px 5px 0;
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
-
 }
 
+/* =============================================================================
+   TYPOGRAPHY & LINKS
+   ============================================================================= */
+
+a {
+  color: rgb(0, 0, 0);
+  transition: color 0.3s ease, text-decoration 0.2s ease;
+}
+
+/* =============================================================================
+   LAYOUT COMPONENTS
+   ============================================================================= */
+
 table {
-  width: 100%; /* full width inside padded body */
+  width: 100%;
   border-collapse: collapse;
   margin: 0 0;
 }
@@ -24,7 +40,6 @@ td {
   border: 2px solid #000;
   overflow-wrap: break-word;
   transition: border-color 0.3s ease;
-
 }
 
 .subrows {
@@ -41,11 +56,6 @@ td {
   margin-bottom: 0;
 }
 
-a {
-  color: rgb(0, 0, 0);
-  transition: color 0.3s ease, text-decoration 0.2s ease;
-}
-
 .content {
   margin: auto;
   text-align: justify;
@@ -58,49 +68,115 @@ pre {
   overflow-x: auto;
   padding: 5px;
   border-radius: 4px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .footer {
   font-size: 0.9rem;
   color: #666;
-  transition: color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
+/* =============================================================================
+   PUBLICATIONS & SECTIONS
+   ============================================================================= */
+
+.section-title {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #005fcc;
 }
 
-@media print {
-  body {
-    font-size: 12pt;
-    line-height: 1.4;
-  }
+.pub-item {
+  padding: 5px;
+  background-color: #fafafa;
+  border-radius: 6px;
+  border-left: 3px solid #005fcc;
+  transition: background-color 0.3s ease, border-left-color 0.3s ease;
 }
+
+.pub-title {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.pub-authors {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 3px;
+  transition: color 0.3s ease;
+}
+
+.pub-journal {
+  font-size: 0.85em;
+  font-style: italic;
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+/* =============================================================================
+   CONTACT INFO
+   ============================================================================= */
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.contact-item {
+  margin: 25px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* =============================================================================
+   INTERACTIVE ELEMENTS
+   ============================================================================= */
+
+.mode-button {
+  background: none;
+  white-space: nowrap;
+  border: none;
+  padding: 4px 8px;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
+
+.mode-button:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.mode-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* =============================================================================
+   ACCESSIBILITY
+   ============================================================================= */
 
 :focus-visible {
   outline: 2px solid #005fcc;
   outline-offset: 2px;
 }
 
-@media (prefers-contrast: high) {
-  body {
-    color: #000;
-    background-color: #fff;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-  scroll-behavior: auto;
-  }
-}
-
-
-
-/* dark mode stuff */
+/* =============================================================================
+   DARK MODE
+   ============================================================================= */
 
 .dark-mode {
   background-color: #121212;
@@ -123,25 +199,54 @@ pre {
   color: #aaa;
 }
 
-.mode-button {
-  background: none;
-  white-space: nowrap;
-  border: none;
-  padding: 2px 4px;  /* Added padding for larger hover area */
-  border-radius: 4px; /* Rounded corners for the hover effect */
-  transition: background-color 0.2s ease; /* Smooth transition */
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  margin: 0;
-  text-decoration: underline;
-}
-
-.mode-button:hover {
-  text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.05); /* Light gray overlay */
-}
-
 .dark-mode .mode-button:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Light overlay for dark mode */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .section-title {
+  color: #4dabf7;
+}
+
+.dark-mode .pub-item {
+  background-color: #1e1e1e;
+  border-left-color: #4dabf7;
+}
+
+.dark-mode .pub-authors {
+  color: #aaa;
+}
+
+.dark-mode .pub-journal {
+  color: #888;
+}
+
+/* =============================================================================
+   MEDIA QUERIES
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+}
+
+@media (prefers-contrast: high) {
+  body {
+    color: #000;
+    background-color: #fff;
+  }
 }
