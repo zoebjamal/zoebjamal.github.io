@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="realmwarp">
+    <meta name="description" content="Zoeb Jamal - Homepage">
     <title>Zoeb Jamal</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
   <body>
     <table>
@@ -16,18 +15,15 @@
         </td>
       </tr>
       <tr>
-        <td class="nav-item"><a href="/" target="_blank" rel="noopener noreferrer">Home</a></td>
-        <td class="nav-item"><a href="/" target="_blank" rel="noopener noreferrer">Posts</a></td>
+        <td class="nav-item"><a href="/index.html" target="_self" rel="noopener noreferrer">Home</a></td>
+        <td class="nav-item"><a href="/posts.html" target="_self" rel="noopener noreferrer">Posts</a></td>
         <td class="nav-spacer"></td>
         <td class="nav-item"><a href="https://github.com/zoebjamal" target="_blank" rel="noopener noreferrer">GitHub</a></td>
         <td class="nav-item"><a href="https://x.com/zoebjamal" target="_blank" rel="noopener noreferrer">Twitter</a></td>
         <td class="nav-item">
-        <button id="mode-toggle" class="mode-button" aria-label="Toggle dark mode">
-          <svg class="mode-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M6 0.278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.040-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-          </svg>
-          Dark
-        </button>
+          <button id="mode-toggle" class="mode-button dark-mode-btn" aria-label="Toggle dark mode">
+            Dark
+          </button>
         </td>
       </tr>
     </table>
@@ -62,41 +58,71 @@
       <p>
         In my free time, I like to ride my bike, take long walks, and drink coffee
       </p>
-    </div> 
+    </div>
     <section id="research">
       <h3 class="section-title">
-        Recent Work
+        Highlighted work
       </h3>
-      <div class="publications">
-        <div class="pub-item">
-          <a href="https://www.sciencedirect.com/science/article/abs/pii/S0092867425007391?dgcid=author" target="_blank" rel="noopener" class="pub-link">
-            <div class="pub-title">
-              Human-specific gene expansions contribute to brain evolution
-            </div>
-          </a>
-          <div class="pub-authors">
-            Soto et al.
+      <div class="pub-item">
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0092867425007391?dgcid=author" target="_blank" rel="noopener">
+          <div class="article-title">
+            Human-specific gene expansions contribute to brain evolution
           </div>
-          <div class="pub-journal">
-            Cell (2025)
-          </div>
+        </a>
+        <div class="article-subheading1">
+          Soto et al.
         </div>
-        <br>
-        <div class="pub-item">
-          <div class="pub-title">
+        <div class="article-subheading2">
+          Cell (2025)
+        </div>
+      </div>
+      <br>
+      <div class="pub-item">
+        <a href="/pdfs/BoG-poster-high-quality-print.pdf" target="_blank" rel="noopener">
+          <div class="article-title">
             Structural variant discovery and characterization from de novo assembly of 
             Khoe-Sān genomes
           </div>
-          <div class="pub-authors">
-            Jamal et al.
-          </div>
-          <div class="pub-journal">
-            Poster at CSHL BoG (2025)
-          </div>
+        </a>
+        <div class="article-subheading1">
+          Jamal et al.
+        </div>
+        <div class="article-subheading2">
+          Poster at CSHL BoG (2025)
         </div>
       </div>
     </section>
-
+    <section id="posts">
+      <h3 class="section-title">
+        Recent posts
+      </h3>
+      <div class="blog-item">
+        <a href="/posts/making_a_website.html">
+          <div class="article-title">
+              Making a website
+          </div>
+        </a>
+        <div class="article-subheading1">
+          2025-07-25
+        </div>
+        <div class="article-subheading2">
+          Things I learned while making this website
+        </div>
+      </div>
+      <br>
+      <div class="tutorial-item">
+        <a href="/posts/filtering_vcf_files.html">
+          <div class="article-title">
+            Filtering vcf files
+          </div>
+        </a>
+        <div class="article-subheading1">
+          2025-07-27
+        </div>
+        <div class="article-subheading2">
+          Using vcftools, bcftools, and cyvcf2 to manipulate vcf files
+      </div>
+    </section>
     <div class="contact-info">
       <div class="contact-item">
         <span>📧</span>
@@ -129,36 +155,30 @@
 
     <script>
     // JavaScript for the toggle functionality
-    const button = document.getElementById('mode-toggle');
-    const body = document.body;
+      const button = document.getElementById('mode-toggle');
+      const body = document.body;
 
-    // SVG icons for light and dark modes
-    const moonIcon = `<svg class="mode-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-      <path d="M6 0.278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.040-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-    </svg>`;
-
-    const sunIcon = `<svg class="mode-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-      <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-    </svg>`;
-
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark-mode');
-      button.innerHTML = sunIcon + ' Light';
-    }
-
-    button.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      
-      if (body.classList.contains('dark-mode')) {
-        button.innerHTML = sunIcon + ' Light';
-        localStorage.setItem('theme', 'dark');
-      } else {
-        button.innerHTML = moonIcon + ' Dark';
-        localStorage.setItem('theme', 'light');
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        button.className = 'mode-button light-mode-btn';
+        button.textContent = 'Light';
       }
-    });
+
+      button.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+          button.className = 'mode-button light-mode-btn';
+          button.textContent = 'Light';
+          localStorage.setItem('theme', 'dark');
+        } else {
+          button.className = 'mode-button dark-mode-btn';
+          button.textContent = 'Dark';
+          localStorage.setItem('theme', 'light');
+        }
+      });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
@@ -167,5 +187,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js"></script>
   </body>
 </html>
