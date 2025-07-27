@@ -1,57 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zoeb Jamal - Personal website">
-  <title>Zoeb Jamal</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <h1 class="header__title">Zoeb Jamal</h1>
-    <hr class="header__divider" aria-hidden="true">
-  </header>
-    
-  <main class="main">
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zoeb Jamal - Personal website">
+    <title>Zoeb Jamal</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="6">
+          <h1 class="table-name">ZOEB JAMAL</h1>
+        </td>
+      </tr>
+      <tr>
+        <td class="subrows"><a href="/">Home</a></td>
+        <td class="subrows"><a href="/">Posts</a></td>
+        <td class="center-subrow"></td>
+        <td class="subrows"><a href="https://github.com/zoebjamal">GitHub</a></td>
+        <td class="subrows"><a href="https://x.com/zoebjamal">Twitter</a></td>
+        <td class="subrows">
+          <button id="mode-toggle" class="mode-button">
+            Toggle Dark Mode
+          </button>
+        </td>
+      </tr>
+    </table>
+    <pre>
+#            ___
+#          _(((,|     what's dna??
+#         /  _-\\
+#        / C o\o \
+#      _/_    __\ \     __ __     __ __     __ __     __
+#     /   \ \___/  )   /--X--\   /--X--\   /--X--\   /--
+#     |    |\_|\  /   /--/ \--\ /--/ \--\ /--/ \--\ /--/
+#     |    |#  #|/          \__X__/   \__X__/   \__X__/
+#     (   /     |
+#      |  |#  # |
+#      |  |    #|
+#      |  | #___n_,_ 
+#   ,-/   7-' .     `\
+#   `-\...\-_   -  o /
+#      |#  # `---U--'
+#      `-v-^-'\/
+#        \  |_|_mnm
+#        (___mnnm</pre>
     <div class="content">
+      <p>
+        Hi, my name is Zoeb. I am a PhD student in the 
+        <a href="https://www.dennislab.org/">Dennis lab</a>
+        at UC Davis. Broadly speaking, I try to discover the genes that make us
+        uniquely human.
+      </p>
+    </div>
+    <!-- <blockquote cite="https://bsky.app/profile/joles.bsky.social/post/3logjuqggkk2q">
       <p>
         There is a monster in the forest and it speaks with a thousand voices. 
         It will answer any question you pose it, it will offer insight to any idea. 
         It will help you, it will thank you, it will never bid you leave. 
         It will even tell you of the darkest arts, if you know precisely how to ask.
       </p>
-      <br>
       <p>
         It feels no joy and no sorrow, it knows no right and no wrong. 
         It knows not truth from lie, though it speaks them all the same.
       </p>
-      <br>
       <p>
         It offers its services freely to any passerby, and many will tell you they 
         find great value in its conversation. "You simply must visit the monster—I always 
         just ask the monster."
       </p>
-      <br>
       <p>
         There are those who know these forests well; they will tell you that freely 
         offered doesn't mean it has no price.
       </p>
-      <br>
       <p>
         For when the next traveler passes by, the monster speaks with thousand and one 
         voices. And when you dream you see the monster; the monster wears your face.
       </p>
-    </div>
-  </main>
-    
-  <footer class="footer">
-    <p class="footer__text">© 2025 Zoeb Jamal. All rights reserved.</p>
-  </footer>
-  <a href="website.html">Go to new page</a>
+      <footer>— <a href="https://bsky.app/profile/joles.bsky.social"> Joles</a></footer>
+    </blockquote> -->
+    <hr>
+    <footer class="footer">
+    <p>
+      © 2025 Zoeb Jamal. All rights reserved.<br>
+      Website design inspired by 
+      <a href="https://github.com/owickstrom/the-monospace-web">The Monospace Web</a><br>
 
-</body>
+      This page was last modified on: <span id="last-modified"></span>
+    </p>
+    </footer>
+    <script>
+      const date = new Date(document.lastModified);
+      const yyyy = date.getFullYear();
+      const mm = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+      const dd = String(date.getDate()).padStart(2, '0');
+
+      document.getElementById("last-modified").textContent = `${yyyy}-${mm}-${dd}`;
+    </script>
+    <script>
+      const button = document.getElementById('mode-toggle');
+      button.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+      });
+    </script>
+  </body>
 </html>
