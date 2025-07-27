@@ -1,3 +1,137 @@
+/* CSS Reset and Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
 body {
+    margin: 0;
+    padding: 1.25rem;
+    min-height: 100vh;
     font-family: 'JetBrains Mono', monospace;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header__title {
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em;
+}
+
+.header__divider {
+    border: none;
+    border-top: 2px solid #333;
+    width: 100%;
+    margin: 0;
+}
+
+/* Main Content */
+.main {
+    max-width: 80ch;
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    text-align: justify;
+    hyphens: auto;
+    word-spacing: 0.1em;
+}
+
+.content p {
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer__text {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .content {
+        text-align: left;
+    }
+    
+    .footer {
+        margin-top: 1.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .header__title {
+        font-size: 18pt;
+    }
+}
+
+/* Focus and Accessibility */
+:focus-visible {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+    
+    .header__divider {
+        border-top-color: #000;
+    }
+    
+    .footer__text {
+        color: #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
