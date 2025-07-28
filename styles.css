@@ -68,6 +68,8 @@ body {
   padding: 15px 5px 0;
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -78,6 +80,10 @@ a {
 /* =============================================================================
    LAYOUT COMPONENTS
    ============================================================================= */
+
+special-header {
+  display: contents;
+}
 
 table {
   width: 100%;
@@ -106,22 +112,30 @@ td {
 }
 
 .content {
-  margin: auto;
   text-align: justify;
+  margin-bottom: 0px;
 }
 
 pre {
   font-family: inherit;
   font-size: inherit;
   background-color: #f8f6f6;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   padding: 5px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   margin-bottom: 5px;
 }
 
+special-footer {
+  display: contents;
+}
+
 .footer {
+  margin-top: auto
+}
+
+.footer-text {
   font-size: 0.9rem;
   color: #666;
   transition: color 0.3s ease;
@@ -135,12 +149,6 @@ pre {
 /* =============================================================================
    PUBLICATIONS & SECTIONS
    ============================================================================= */
-
-.section-title {
-  font-weight: 700;
-  font-size: 1.2em;
-  text-align: justify;
-}
 
 .pub-item {
   padding: 5px;
@@ -198,9 +206,8 @@ pre {
 .contact-info {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px 20px; /* 5px vertical gap when wrapped, 20px horizontal when side-by-side */
+  gap: 5px 20px;
   justify-content: space-between;
-  margin-top: 25px;
 }
 
 .contact-item {
@@ -397,10 +404,7 @@ pre[class*="language-"]:before {
   color: #586069;
   padding: 4px 12px;
   font-size: 11px;
-  border-top: 1px solid #e1e4e8;
-  border-right: 1px solid #e1e4e8;
-  border-left: 1px solid #e1e4e8;
-  border-bottom: 1px solid #f6f8fa;
+  border: 1px solid #d1d5da;
   border-radius: 0 6px 0 6px;
   text-transform: uppercase;
   font-weight: 600;
@@ -494,10 +498,7 @@ pre[class*="language-r"]:before { content: "R"; }
 .dark-mode pre[class*="language-"]:before {
   background: #30363d;
   color: #7d8590;
-  border-top-color: #30363d;
-  border-right-color: #30363d;
-  border-left-color: #30363d;
-  border-bottom-color: #161b22;
+  border: 1px solid #30363d;
 }
 
 .dark-mode .token.comment,
