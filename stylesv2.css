@@ -1,0 +1,598 @@
+/* =============================================================================
+   CSS CUSTOM PROPERTIES (ROOT VARIABLES)
+   ============================================================================= */
+
+:root {
+  /* Transitions */
+  --transition-duration: 0.3s;
+  --transition-timing: ease;
+  --transition-hover: 0.2s;
+  
+  /* Typography */
+  --font-family-mono: 'JetBrains Mono', monospace;
+  --font-family-display: 'Alpha Lyrae', monospace;
+  --font-size-base: 16px;
+  --font-size-small: 0.9rem;
+  --font-size-tiny: 0.8em;
+  --font-size-code: 0.9em;
+  --font-size-label: 11px;
+  --font-size-section: 1.2em;
+  --line-height-base: 1.5;
+  --line-height-code: 1.5;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --letter-spacing-label: 0.5px;
+  
+  /* Colors - Light Mode */
+  --color-text: #000;
+  --color-text-secondary: #555;
+  --color-text-tertiary: #777;
+  --color-text-muted: #666;
+  --color-background: #fff;
+  --color-background-secondary: #fafafa;
+  --color-background-code: #f8f6f6;
+  --color-background-prism: #f6f8fa;
+  --color-background-inline-code: rgba(175, 184, 193, 0.2);
+  
+  /* Border Colors */
+  --color-border: #000;
+  --color-border-light: #e1e4e8;
+  --color-border-medium: #d1d5da;
+  --color-border-table: #000;
+  
+  /* Accent Colors */
+  --color-pub: #005fcc;
+  --color-blog: #007f00;
+  --color-tutorial: #f0c000;
+  --color-focus: #005fcc;
+  
+  /* Code Label Colors */
+  --color-label-bg: #e1e4e8;
+  --color-label-text: #586069;
+  --color-label-border: #d1d5da;
+  
+  /* Syntax Highlighting - Light Mode */
+  --color-syntax-text: #24292e;
+  --color-syntax-comment: #6a737d;
+  --color-syntax-punctuation: #24292e;
+  --color-syntax-property: #005cc5;
+  --color-syntax-string: #032f62;
+  --color-syntax-keyword: #d73a49;
+  --color-syntax-function: #6f42c1;
+  --color-syntax-variable: #e36209;
+  
+  /* Spacing */
+  --spacing-xs: 3px;
+  --spacing-sm: 5px;
+  --spacing-md: 8px;
+  --spacing-lg: 12px;
+  --spacing-xl: 15px;
+  --spacing-xxl: 20px;
+  --spacing-section: 16px;
+  
+  /* Padding */
+  --padding-xs: 4px;
+  --padding-sm: 5px;
+  --padding-md: 8px;
+  --padding-lg: 12px;
+  --padding-xl: 16px;
+  --padding-code: 5px;
+  --padding-code-block: 18px 16px 16px;
+  --padding-label: 4px 12px;
+  --padding-button: 4px 8px 4px 28px;
+  
+  /* Layout */
+  --max-width: 80ch;
+  --min-height: 100vh;
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+  --border-radius-small: 3px;
+  --border-radius-medium: 4px;
+  --border-radius-large: 6px;
+  --border-radius-label: 0 6px 0 6px;
+  
+  /* Z-index */
+  --z-index-label: 1;
+  
+  /* Icon sizes */
+  --icon-size: 14px;
+  
+  /* Hover effects */
+  --hover-bg-light: rgba(0, 0, 0, 0.05);
+  --outline-width: 2px;
+  --outline-offset: 2px;
+}
+
+/* Dark Mode Variables */
+.dark-mode {
+  --color-text: #e0e0e0;
+  --color-text-secondary: #aaa;
+  --color-text-tertiary: #888;
+  --color-text-muted: #aaa;
+  --color-background: #121212;
+  --color-background-secondary: #1e1e1e;
+  --color-background-code: #2c2c2c;
+  --color-background-prism: #161b22;
+  --color-background-inline-code: rgba(110, 118, 129, 0.4);
+  
+  --color-border-table: #555;
+  --color-border-light: #30363d;
+  
+  --color-pub: #4dabf7;
+  --color-blog: #4daf50;
+  --color-tutorial: #ffd700;
+  
+  --color-label-bg: #30363d;
+  --color-label-text: #7d8590;
+  --color-label-border: #30363d;
+  
+  /* Syntax Highlighting - Dark Mode */
+  --color-syntax-text: #e6edf3;
+  --color-syntax-comment: #8b949e;
+  --color-syntax-punctuation: #e6edf3;
+  --color-syntax-property: #79c0ff;
+  --color-syntax-string: #a5d6ff;
+  --color-syntax-keyword: #ff7b72;
+  --color-syntax-function: #d2a8ff;
+  --color-syntax-variable: #ffa657;
+  
+  --hover-bg-light: rgba(255, 255, 255, 0.1);
+}
+
+/* =============================================================================
+   FONT DECLARATIONS
+   ============================================================================= */
+
+@font-face {
+  font-family: 'Alpha Lyrae';
+  src: url('/fonts/AlphaLyrae-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-mono);
+  /* font-family: var(--font-family-display); */
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-sm) 0;
+  min-height: var(--min-height);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color var(--transition-duration) var(--transition-timing), 
+              color var(--transition-duration) var(--transition-timing);
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--color-text);
+  transition: color var(--transition-duration) var(--transition-timing), 
+              text-decoration var(--transition-hover) var(--transition-timing);
+}
+
+/* =============================================================================
+   LAYOUT COMPONENTS
+   ============================================================================= */
+
+special-header {
+  display: contents;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0;
+}
+
+td { 
+  padding: var(--padding-sm); 
+  border: var(--border-width-medium) solid var(--color-border-table);
+  overflow-wrap: break-word;
+  transition: border-color var(--transition-duration) var(--transition-timing);
+}
+
+.nav-item { 
+  text-align: center; 
+}
+
+.nav-spacer { 
+  width: 100%; 
+}
+
+.site-title { 
+  margin: 0; 
+  font-weight: var(--font-weight-extrabold); 
+}
+
+.content {
+  text-align: justify;
+}
+
+pre {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: var(--color-background-code);
+  /* overflow-x: auto; */
+  padding: var(--padding-code);
+  border-radius: var(--border-radius-medium);
+  transition: background-color var(--transition-duration) var(--transition-timing);
+  margin-bottom: var(--spacing-sm);
+}
+
+special-footer {
+  display: contents;
+}
+
+.footer {
+  margin-top: auto
+}
+
+.footer-text {
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+  transition: color var(--transition-duration) var(--transition-timing);
+}
+
+.caption {
+  font-size: var(--font-size-tiny);
+  margin-top: 0px;
+}
+
+/* =============================================================================
+   PUBLICATIONS & SECTIONS
+   ============================================================================= */
+
+.section-title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-section);
+  text-align: justify;
+}
+
+.pub-item {
+  padding: var(--padding-sm);
+  background-color: var(--color-background-secondary);
+  border-radius: px;
+  border-left: var(--border-width-thick) solid var(--color-pub);
+  transition: background-color var(--transition-duration) var(--transition-timing), 
+              border-left-color var(--transition-duration) var(--transition-timing);
+  text-align: justify;
+}
+
+.blog-item {
+  padding: var(--padding-sm);
+  background-color: var(--color-background-secondary);
+  border-radius: px;
+  border-left: var(--border-width-thick) solid var(--color-blog);
+  transition: background-color var(--transition-duration) var(--transition-timing), 
+              border-left-color var(--transition-duration) var(--transition-timing);
+  text-align: justify;
+}
+
+.tutorial-item {
+  padding: var(--padding-sm);
+  background-color: var(--color-background-secondary);
+  border-radius: px;
+  border-left: var(--border-width-thick) solid var(--color-tutorial);
+  transition: background-color var(--transition-duration) var(--transition-timing), 
+              border-left-color var(--transition-duration) var(--transition-timing);
+  text-align: justify;
+}
+
+.article-title {
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-sm);
+  text-align: justify;
+}
+
+.article-subheading1 {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+  transition: color var(--transition-duration) var(--transition-timing);
+  text-align: justify;
+}
+
+.article-subheading2 {
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--color-text-tertiary);
+  transition: color var(--transition-duration) var(--transition-timing);
+  text-align: justify;
+}
+
+/* =============================================================================
+   CONTACT INFO
+   ============================================================================= */
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm) var(--spacing-xxl);
+  justify-content: space-between;
+}
+
+.contact-item {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 0 1 auto;
+}
+
+/* =============================================================================
+   LIGHT/DARK MODE BUTTON
+   ============================================================================= */
+
+.mode-button {
+  background: none;
+  white-space: nowrap;
+  border: none;
+  padding: var(--padding-button); /* Extra left padding for icon space */
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  border-radius: var(--border-radius-medium);
+  transition: background-color var(--transition-hover) var(--transition-timing);
+  position: relative; /* For absolute positioning of icon */
+  display: inline-block; /* Changed from flex since we're not using flexbox layout */
+}
+
+.mode-button::before {
+  content: '';
+  position: absolute;
+  left: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dark-mode-btn::before {
+  background-image: url('/icons/moon.svg');
+}
+
+.light-mode-btn::before {
+  background-image: url('/icons/sun.svg');
+}
+
+.mode-button:hover {
+  text-decoration: none;
+  background-color: var(--hover-bg-light);
+}
+
+/* =============================================================================
+   ACCESSIBILITY
+   ============================================================================= */
+
+:focus-visible {
+  outline: var(--outline-width) solid var(--color-focus);
+  outline-offset: var(--outline-offset);
+}
+
+/* =============================================================================
+   DARK MODE
+   ============================================================================= */
+
+/* Dark mode styles are now handled by CSS custom properties above */
+
+/* =============================================================================
+   MEDIA QUERIES
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+}
+
+@media (prefers-contrast: high) {
+  body {
+    color: #000;
+    background-color: #fff;
+  }
+}
+
+/* =============================================================================
+   PRISM.JS SYNTAX HIGHLIGHTING WITH BLENDED LANGUAGE LABELS
+   ============================================================================= */
+
+/* Base code styling */
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-code);
+  line-height: var(--line-height-code);
+  direction: ltr;
+  text-align: left;
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  color: var(--color-syntax-text);
+  transition: color var(--transition-duration) var(--transition-timing);
+}
+
+/* Code blocks with blended language labels */
+pre[class*="language-"] {
+  padding: var(--padding-code-block);
+  margin: var(--spacing-section) 0;
+  background: var(--color-background-prism);
+  border: var(--border-width-thin) solid var(--color-border-light);
+  border-radius: var(--border-radius-large);
+  position: relative;
+  transition: background-color var(--transition-duration) var(--transition-timing), 
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: var(--padding-xs);
+  border-radius: var(--border-radius-small);
+  background: var(--color-background-inline-code);
+  white-space: normal;
+  transition: background-color var(--transition-duration) var(--transition-timing);
+}
+
+/* Blended language labels */
+pre[class*="language-"]:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--color-label-bg);
+  color: var(--color-label-text);
+  padding: var(--padding-label);
+  font-size: var(--font-size-label);
+  border: var(--border-width-thin) solid var(--color-label-border);
+  border-radius: var(--border-radius-label);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-label);
+  z-index: var(--z-index-label);
+  transition: background-color var(--transition-duration) var(--transition-timing), 
+              color var(--transition-duration) var(--transition-timing), 
+              border-color var(--transition-duration) var(--transition-timing);
+}
+
+/* Language-specific labels */
+pre[class*="language-python"]:before { content: "Python"; }
+pre[class*="language-javascript"]:before { content: "JavaScript"; }
+pre[class*="language-css"]:before { content: "CSS"; }
+pre[class*="language-html"]:before { content: "HTML"; }
+pre[class*="language-bash"]:before { content: "Bash"; }
+pre[class*="language-markdown"]:before { content: "Markdown"; }
+pre[class*="language-r"]:before { content: "R"; }
+
+/* Syntax highlighting tokens with transitions */
+[class*="token"] {
+  transition: color var(--transition-duration) var(--transition-timing);
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--color-syntax-comment);
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: var(--color-syntax-punctuation);
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--color-syntax-property);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--color-syntax-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--color-syntax-keyword);
+  font-weight: var(--font-weight-semibold);
+}
+
+.token.function,
+.token.class-name {
+  color: var(--color-syntax-function);
+  font-weight: var(--font-weight-semibold);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--color-syntax-variable);
+}
