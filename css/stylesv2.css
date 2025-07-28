@@ -143,8 +143,6 @@
   --hover-bg-light: rgba(255, 255, 255, 0.1);
 }
 
-/* * { border: 1px solid red !important; } */
-
 /* =============================================================================
    FONT DECLARATIONS
    ============================================================================= */
@@ -208,10 +206,9 @@ html {
 
 body {
   font-family: var(--font-family-mono);
-  /* font-family: var(--font-family-display); */
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--spacing-xl) var(--spacing-sm) 0;
+  padding: var(--padding-xl) var(--padding-sm) 0;
   min-height: var(--min-height);
   background-color: var(--color-background);
   color: var(--color-text);
@@ -302,7 +299,7 @@ special-footer {
 }
 
 .pub-item {
-  padding: var(--padding-sm);
+  padding: var(--padding-md);
   background-color: var(--color-background-secondary);
   border-radius: px;
   border-left: var(--border-width-thick) solid var(--color-pub);
@@ -311,7 +308,7 @@ special-footer {
 }
 
 .blog-item {
-  padding: var(--padding-sm);
+  padding: var(--padding-md);
   background-color: var(--color-background-secondary);
   border-radius: px;
   border-left: var(--border-width-thick) solid var(--color-blog);
@@ -320,7 +317,7 @@ special-footer {
 }
 
 .tutorial-item {
-  padding: var(--padding-sm);
+  padding: var(--padding-md);
   background-color: var(--color-background-secondary);
   border-radius: px;
   border-left: var(--border-width-thick) solid var(--color-tutorial);
@@ -374,7 +371,7 @@ special-footer {
   background: none;
   white-space: nowrap;
   border: none;
-  padding: var(--padding-button); /* Extra left padding for icon space */
+  padding: var(--padding-button);
   margin: 0;
   font: inherit;
   color: inherit;
@@ -382,8 +379,8 @@ special-footer {
   text-decoration: underline;
   border-radius: var(--border-radius-medium);
   transition: background-color var(--transition-hover) var(--transition-timing);
-  position: relative; /* For absolute positioning of icon */
-  display: inline-block; /* Changed from flex since we're not using flexbox layout */
+  position: relative;
+  display: inline-block;
 }
 
 .mode-button::before {
@@ -420,12 +417,6 @@ special-footer {
   outline: var(--outline-width) solid var(--color-focus);
   outline-offset: var(--outline-offset);
 }
-
-/* =============================================================================
-   DARK MODE
-   ============================================================================= */
-
-/* Dark mode styles are now handled by CSS custom properties above */
 
 /* =============================================================================
    MEDIA QUERIES
@@ -528,6 +519,7 @@ pre[class*="language-html"]:before { content: "HTML"; }
 pre[class*="language-bash"]:before { content: "Bash"; }
 pre[class*="language-markdown"]:before { content: "Markdown"; }
 pre[class*="language-r"]:before { content: "R"; }
+pre[class*="language-text"]::before { content: "Text"; }
 
 /* Syntax highlighting tokens with transitions */
 [class*="token"] {
