@@ -260,10 +260,6 @@ td {
   font-weight: var(--font-weight-extrabold); 
 }
 
-.content {
-  /* text-align inherited from body */
-}
-
 pre {
   font-family: inherit;
   font-size: inherit;
