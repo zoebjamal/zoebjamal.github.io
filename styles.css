@@ -372,20 +372,16 @@ pre[class*="language-"] {
   -ms-hyphens: none;
   hyphens: none;
   color: #24292e;
-  background: none;
 }
 
 /* Code blocks with blended language labels */
 pre[class*="language-"] {
-  padding: 16px;
+  padding: 18px 16px 16px;
   margin: 16px 0;
-  overflow-wrap: break-word;
   background: #f6f8fa;
   border: 1px solid #e1e4e8;
   border-radius: 6px;
   position: relative;
-  /* Minimal extra padding at top for label */
-  padding-top: 18px;
 }
 
 /* Inline code */
@@ -396,7 +392,7 @@ pre[class*="language-"] {
   white-space: normal;
 }
 
-/* Blended language labels - seamlessly integrated into border */
+/* Blended language labels */
 pre[class*="language-"]:before {
   content: "";
   position: absolute;
@@ -404,18 +400,17 @@ pre[class*="language-"]:before {
   right: -1px;
   background: #e1e4e8;
   color: #586069;
-  padding: 4px 12px 4px 12px;
+  padding: 4px 12px;
   font-size: 11px;
-  font-family: 'JetBrains Mono', monospace;
-  border: 1px solid #e1e4e8;
-  border-bottom: none;
+  border-top: 1px solid #e1e4e8;
+  border-right: 1px solid #e1e4e8;
+  border-left: 1px solid #e1e4e8;
+  border-bottom: 1px solid #f6f8fa;
   border-radius: 0 6px 0 6px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.5px;
   z-index: 1;
-  /* Blend with the code block */
-  border-bottom: 1px solid #f6f8fa;
 }
 
 /* Language-specific labels */
@@ -463,11 +458,7 @@ pre[class*="language-r"]:before { content: "R"; }
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string {
-  color: #d73a49;
-  font-weight: 600;
-}
-
+.style .token.string,
 .token.atrule,
 .token.attr-value,
 .token.keyword {
@@ -488,7 +479,7 @@ pre[class*="language-r"]:before { content: "R"; }
 }
 
 /* =============================================================================
-   DARK MODE SYNTAX HIGHLIGHTING WITH BLENDED LABELS
+   DARK MODE SYNTAX HIGHLIGHTING
    ============================================================================= */
 
 .dark-mode code[class*="language-"],
@@ -505,12 +496,13 @@ pre[class*="language-r"]:before { content: "R"; }
   background: rgba(110, 118, 129, 0.4);
 }
 
-/* Dark mode blended language labels */
 .dark-mode pre[class*="language-"]:before {
   background: #30363d;
   color: #7d8590;
-  border-color: #30363d;
-  border-bottom: 1px solid #161b22;
+  border-top-color: #30363d;
+  border-right-color: #30363d;
+  border-left-color: #30363d;
+  border-bottom-color: #161b22;
 }
 
 .dark-mode .token.comment,
@@ -547,10 +539,7 @@ pre[class*="language-r"]:before { content: "R"; }
 .dark-mode .token.entity,
 .dark-mode .token.url,
 .dark-mode .language-css .token.string,
-.dark-mode .style .token.string {
-  color: #ff7b72;
-}
-
+.dark-mode .style .token.string,
 .dark-mode .token.atrule,
 .dark-mode .token.attr-value,
 .dark-mode .token.keyword {

@@ -1,19 +1,84 @@
-<head>
-	<link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-	<p>
-		test code
-	</p>
-<pre class="language-python"><code># Example Python code
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoeb Jamal</title>
+    <meta name="author" content="Zoeb Jamal">
+    
+    <!-- Social Media Preview -->
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="Zoeb Jamal's homepage">
+    <meta property="og:image" content="https://zoebjamal.github.io/ascii-landscape.png">
+    <meta property="og:url" content="https://zoebjamal.github.io/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" content="https://zoebjamal.github.io/posts.html">
+    <meta name="twitter:url" content="https://zoebjamal.github.io/posts.html">
+    <meta name="twitter:title" content="Home">
+    <meta name="twitter:description" content="Zoeb Jamal's homepage">
+    <meta name="twitter:image" content="https://zoebjamal.github.io/ascii-landscape.png">
+
+    <!-- extra metadata for Slack unfurls -->
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Zoeb Jamal" />
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+
+<pre class="language-Bash"><code>#Example python code
 import pandas as pd
 
-def analyze_vcf(filename):
-    """Analyze a VCF file"""
-    df = pd.read_csv(filename, sep='\t')
-    return df.shape</code></pre>
+def analyze_vcf(foo):
+	df = pd.read_csv(foo, sep='\t')
+	return df.shape
+</code></pre>
 
-	<script src="/prism.js"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script> -->
-</body>
+
+    <script>
+      const date = new Date(document.lastModified);
+      const yyyy = date.getFullYear();
+      const mm = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+      const dd = String(date.getDate()).padStart(2, '0');
+
+      document.getElementById("last-modified").textContent = `${yyyy}-${mm}-${dd}`;
+    </script>
+
+    <script>
+    // JavaScript for the toggle functionality
+      const button = document.getElementById('mode-toggle');
+      const body = document.body;
+
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        button.className = 'mode-button light-mode-btn';
+        button.textContent = 'Light';
+      }
+
+      button.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+          button.className = 'mode-button light-mode-btn';
+          button.textContent = 'Light';
+          localStorage.setItem('theme', 'dark');
+        } else {
+          button.className = 'mode-button dark-mode-btn';
+          button.textContent = 'Dark';
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    </script>
+	<script src="/prism.js"></script> 
+  </body>
+</html>
