@@ -52,17 +52,17 @@
   /* Code Label Colors */
   --color-label-bg: #e1e4e8;
   --color-label-text: #586069;
-  --color-label-border: #d1d5da;
+  --color-label-border: #e1e4e8;
   
-  /* Syntax Highlighting - Light Mode */
-  --color-syntax-text: #24292e;
-  --color-syntax-comment: #6a737d;
-  --color-syntax-punctuation: #24292e;
-  --color-syntax-property: #005cc5;
-  --color-syntax-string: #032f62;
-  --color-syntax-keyword: #d73a49;
-  --color-syntax-function: #6f42c1;
-  --color-syntax-variable: #e36209;
+  /* Syntax Highlighting - Light Mode (GitHub/Primer official colors) */
+  --color-syntax-text: #24292f;
+  --color-syntax-comment: #656d76;
+  --color-syntax-punctuation: #24292f;
+  --color-syntax-property: #0550ae;
+  --color-syntax-string: #0a3069;
+  --color-syntax-keyword: #cf222e;
+  --color-syntax-function: #8250df;
+  --color-syntax-variable: #953800;
   
   /* Spacing */
   --spacing-xs: 3px;
@@ -130,10 +130,10 @@
   --color-label-text: #7d8590;
   --color-label-border: #30363d;
   
-  /* Syntax Highlighting - Dark Mode */
-  --color-syntax-text: #e6edf3;
+  /* Syntax Highlighting - Dark Mode (GitHub/Primer official colors) */
+  --color-syntax-text: #f0f6fc;
   --color-syntax-comment: #8b949e;
-  --color-syntax-punctuation: #e6edf3;
+  --color-syntax-punctuation: #f0f6fc;
   --color-syntax-property: #79c0ff;
   --color-syntax-string: #a5d6ff;
   --color-syntax-keyword: #ff7b72;
@@ -213,6 +213,7 @@ body {
   min-height: var(--min-height);
   background-color: var(--color-background);
   color: var(--color-text);
+  text-align: justify;
   transition: background-color var(--transition-duration) var(--transition-timing), 
               color var(--transition-duration) var(--transition-timing);
   display: flex;
@@ -260,7 +261,7 @@ td {
 }
 
 .content {
-  text-align: justify;
+  /* text-align inherited from body */
 }
 
 pre {
@@ -300,7 +301,6 @@ special-footer {
 .section-title {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-section);
-  text-align: justify;
 }
 
 .pub-item {
@@ -310,7 +310,6 @@ special-footer {
   border-left: var(--border-width-thick) solid var(--color-pub);
   transition: background-color var(--transition-duration) var(--transition-timing), 
               border-left-color var(--transition-duration) var(--transition-timing);
-  text-align: justify;
 }
 
 .blog-item {
@@ -320,7 +319,6 @@ special-footer {
   border-left: var(--border-width-thick) solid var(--color-blog);
   transition: background-color var(--transition-duration) var(--transition-timing), 
               border-left-color var(--transition-duration) var(--transition-timing);
-  text-align: justify;
 }
 
 .tutorial-item {
@@ -330,13 +328,11 @@ special-footer {
   border-left: var(--border-width-thick) solid var(--color-tutorial);
   transition: background-color var(--transition-duration) var(--transition-timing), 
               border-left-color var(--transition-duration) var(--transition-timing);
-  text-align: justify;
 }
 
 .article-title {
   font-weight: var(--font-weight-medium);
   margin-bottom: var(--spacing-sm);
-  text-align: justify;
 }
 
 .article-subheading1 {
@@ -344,7 +340,6 @@ special-footer {
   color: var(--color-text-secondary);
   margin-bottom: var(--spacing-xs);
   transition: color var(--transition-duration) var(--transition-timing);
-  text-align: justify;
 }
 
 .article-subheading2 {
@@ -352,7 +347,6 @@ special-footer {
   font-style: italic;
   color: var(--color-text-tertiary);
   transition: color var(--transition-duration) var(--transition-timing);
-  text-align: justify;
 }
 
 /* =============================================================================
