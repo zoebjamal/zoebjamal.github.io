@@ -54,6 +54,7 @@ class SpecialFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <footer class="footer">
+      <hr>
       <div class="contact-info">
         <div class="contact-item">
           <span>📧</span>
@@ -64,13 +65,12 @@ class SpecialFooter extends HTMLElement {
           <span>UC Davis, Davis, CA</span>
         </div>
       </div>
-      <hr>
       <p class="footer-text">
-      Website design inspired by 
-      <a href="https://github.com/owickstrom/the-monospace-web" target="_blank" rel="noopener noreferrer">The Monospace Web</a><br>
+        Website design inspired by 
+        <a href="https://github.com/owickstrom/the-monospace-web" target="_blank" rel="noopener noreferrer">The Monospace Web</a><br>
 
-      This page was last modified on: <span id="last-modified"></span>
-    </p>
+        This page was last modified on: <span id="last-modified"></span>
+      </p>
     </footer>
     `;
     

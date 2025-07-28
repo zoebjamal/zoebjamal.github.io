@@ -86,7 +86,7 @@
   
   /* Layout */
   --max-width: 80ch;
-  --min-height: 100vh;
+  --min-height: calc(100vh - 20px);
   --border-width-thin: 1px;
   --border-width-medium: 2px;
   --border-width-thick: 3px;
@@ -142,6 +142,8 @@
   
   --hover-bg-light: rgba(255, 255, 255, 0.1);
 }
+
+/* * { border: 1px solid red !important; } */
 
 /* =============================================================================
    FONT DECLARATIONS
