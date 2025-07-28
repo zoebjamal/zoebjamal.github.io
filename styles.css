@@ -70,10 +70,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* =============================================================================
-   TYPOGRAPHY & LINKS
-   ============================================================================= */
-
 a {
   color: rgb(0, 0, 0);
   transition: color 0.3s ease, text-decoration 0.2s ease;
@@ -199,7 +195,6 @@ pre {
    CONTACT INFO
    ============================================================================= */
 
-/* Dynamic contact layout - no media queries needed! */
 .contact-info {
   display: flex;
   flex-wrap: wrap;
@@ -209,16 +204,16 @@ pre {
 }
 
 .contact-item {
-  margin: 0; /* Remove individual margins */
+  margin: 0;
   display: flex;
   align-items: center;
   gap: 8px;
-  flex: 0 1 auto; /* Don't grow, can shrink, auto basis */
+  flex: 0 1 auto;
 }
 
 
 /* =============================================================================
-   INTERACTIVE ELEMENTS
+   LIGHT/DARK MODE BUTTON
    ============================================================================= */
 
 .mode-button {
