@@ -427,7 +427,7 @@ pre[class*="language-bash"]:before { content: "Bash"; }
 pre[class*="language-markdown"]:before { content: "Markdown"; }
 pre[class*="language-r"]:before { content: "R"; }
 
-/* Syntax highlighting tokens */
+/* Syntax highlighting tokens
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -485,7 +485,7 @@ pre[class*="language-r"]:before { content: "R"; }
 .token.important,
 .token.variable {
   color: #e36209;
-}
+} */
 
 /* =============================================================================
    DARK MODE SYNTAX HIGHLIGHTING WITH BLENDED LABELS
