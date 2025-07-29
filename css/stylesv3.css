@@ -352,14 +352,16 @@ td {
 }
 
 pre {
-  font-family: inherit;
-  font-size: inherit;
-  background-color: var(--color-background-code);
-  /* overflow-x: auto; */
-  padding: var(--padding-code);
-  border-radius: var(--border-radius-medium);
-  transition: background-color var(--transition-duration) var(--transition-timing);
-  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-code);
+  line-height: var(--line-height-code);
+  background-color: var(--color-background-prism);
+  border: var(--border-width-thin) solid var(--color-border-light);
+  border-radius: var(--border-radius-large);
+  padding: var(--padding-code-block);
+  margin: var(--spacing-section) 0;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
 }
 
 special-footer {
@@ -382,7 +384,7 @@ code {
   font-size: var(--font-size-code);
   line-height: var(--line-height-code);
   background-color: var(--color-background-inline-code);
-  padding: 2px 4px;
+  padding: var(--padding-xs);
   border-radius: var(--border-radius-small);
   transition: background-color var(--transition-duration) var(--transition-timing);
 }
@@ -642,7 +644,6 @@ pre[class*="language-html"]:before { content: "HTML"; }
 pre[class*="language-bash"]:before { content: "Bash"; }
 pre[class*="language-markdown"]:before { content: "Markdown"; }
 pre[class*="language-r"]:before { content: "R"; }
-pre[class*="language-text"]::before { content: "Text"; }
 
 /* Syntax highlighting tokens with transitions */
 [class*="token"] {
