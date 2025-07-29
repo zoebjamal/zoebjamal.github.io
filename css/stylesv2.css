@@ -102,7 +102,7 @@
   --icon-size: 14px;
   
   /* Hover effects */
-  --hover-bg-light: rgba(0, 0, 0, 0.05);
+  --hover-bg: rgba(0, 0, 0, 0.05);
   --outline-width: 2px;
   --outline-offset: 2px;
 }
@@ -140,7 +140,7 @@
   --color-syntax-function: #d2a8ff;
   --color-syntax-variable: #ffa657;
   
-  --hover-bg-light: rgba(255, 255, 255, 0.1);
+  --hover-bg: rgba(255, 255, 255, 0.1);
 }
 
 /* =============================================================================
@@ -406,7 +406,7 @@ special-footer {
 
 .mode-button:hover {
   text-decoration: none;
-  background-color: var(--hover-bg-light);
+  background-color: var(--hover-bg);
 }
 
 /* =============================================================================
