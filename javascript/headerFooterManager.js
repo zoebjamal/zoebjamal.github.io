@@ -4,7 +4,7 @@ class SpecialHeader extends HTMLElement {
       <table>
         <tr>
           <td colspan="6">
-            <h1 class="site-title">ZOEB JAMAL</h1>
+            <h2 class="site-title">ZOEB JAMAL</h2>
           </td>
         </tr>
         <tr>
@@ -54,7 +54,6 @@ class SpecialFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <footer class="footer">
-      <hr>
       <div class="contact-info">
         <div class="contact-item">
           <span>📧</span>
@@ -65,6 +64,7 @@ class SpecialFooter extends HTMLElement {
           <span>UC Davis, Davis, CA</span>
         </div>
       </div>
+      <hr>
       <p class="footer-text">
         Website design inspired by 
         <a href="https://github.com/owickstrom/the-monospace-web" target="_blank" rel="noopener noreferrer">The Monospace Web</a><br>
