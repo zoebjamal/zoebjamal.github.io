@@ -344,6 +344,8 @@ td {
 
 .nav-spacer { 
   width: 100%; 
+  min-width: 0;
+  padding: 0;
 }
 
 .site-title { 
@@ -476,45 +478,41 @@ code {
    ============================================================================= */
 
 .mode-button {
-  background: none;
-  white-space: nowrap;
-  border: none;
-  padding: var(--padding-button);
-  margin: 0;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  text-decoration: underline;
-  border-radius: var(--border-radius-medium);
-  transition: background-color var(--transition-hover) var(--transition-timing);
-  position: relative;
-  display: inline-block;
+ background: none;
+ white-space: nowrap;
+ border: none;
+ padding: 0;
+ margin: 0;
+ font: inherit;
+ color: inherit;
+ cursor: pointer;
+ text-decoration: underline;
+ border-radius: var(--border-radius-medium);
+ display: flex;
+ align-items: center;
+ gap: var(--spacing-sm);
 }
 
 .mode-button::before {
-  content: '';
-  position: absolute;
-  left: var(--spacing-md);
-  top: 50%;
-  transform: translateY(-50%);
-  width: var(--icon-size);
-  height: var(--icon-size);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+ content: '';
+ width: var(--icon-size);
+ height: var(--icon-size);
+ background-size: contain;
+ background-repeat: no-repeat;
+ background-position: center;
+ flex-shrink: 0;
 }
 
 .dark-mode-btn::before {
-  background-image: url('/icons/moon.svg');
+ background-image: url('/icons/moon.svg');
 }
 
 .light-mode-btn::before {
-  background-image: url('/icons/sun.svg');
+ background-image: url('/icons/sun.svg');
 }
 
 .mode-button:hover {
-  text-decoration: none;
-  background-color: var(--hover-bg);
+ text-decoration: none;
 }
 
 /* =============================================================================

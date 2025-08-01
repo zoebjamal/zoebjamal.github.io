@@ -4,7 +4,7 @@ class SpecialHeader extends HTMLElement {
       <table>
         <tr>
           <td colspan="6">
-            <h2 class="site-title">ZOEB JAMAL</h2>
+            <h1 class="site-title">ZOEB JAMAL</h1>
           </td>
         </tr>
         <tr>
