@@ -69,7 +69,7 @@ class SpecialFooter extends HTMLElement {
         Website design inspired by 
         <a href="https://github.com/owickstrom/the-monospace-web" target="_blank" rel="noopener noreferrer">The Monospace Web</a><br>
 
-        This page was last modified on: <span id="last-modified"></span>
+        This site was last modified on: <span id="last-modified"></span>
       </p>
     </footer>
     `;
