@@ -1,62 +1,53 @@
-/* =============================================================================
-   CSS CUSTOM PROPERTIES (ROOT VARIABLES)
-   ============================================================================= */
+/* ------
+ROOT VARS
+------ */
 :root {
-  /* Transitions */
   --transition-duration: 0.3s;
   --transition-timing: ease;
   --transition-hover: 0.2s;
   
-  /* Typography Scale - Major Third (1.25) */
   --font-size-base: 16px;
-  --font-size-p: 1rem;           /* 16px */
-  --font-size-h6: 1.25rem;       /* 20px */
-  --font-size-h5: 1.563rem;      /* 25px */
-  --font-size-h4: 1.953rem;      /* 31.25px */
-  --font-size-h3: 2.441rem;      /* 39px */
-  --font-size-h2: 3.052rem;      /* 48.8px */
-  --font-size-h1: 3.815rem;      /* 61px */
+  --font-size-p: 1rem; 
+  --font-size-h6: 1.25rem;   
+  --font-size-h5: 1.563rem;     
+  --font-size-h4: 1.953rem;     
+  --font-size-h3: 2.441rem;      
+  --font-size-h2: 3.052rem;     
+  --font-size-h1: 3.815rem;    
   
-  /* Updated font sizes using typography scale */
   --font-size-smaller: 0.8rem;
   --font-size-tiny: 0.75rem; 
   --font-size-small: 0.9rem;
   --font-size-tiniest: 0.6875rem;
   --font-size-code: 0.9rem;
   
-  /* Typography - Font Families */
   --font-family-mono: 'JetBrains Mono', monospace;
-  --font-family-display: 'Alpha Lyrae', monospace;
   
-  /* Typography - Line Heights */
-  --line-height-base: 1.5;       /* 150% for p */
-  --line-height-p: 1.5;          /* 150% */
-  --line-height-h6: 1.4;         /* 140% */
-  --line-height-h5: 1.35;        /* 135% */
-  --line-height-h4: 1.3;         /* 130% */
-  --line-height-h3: 1.2;         /* 120% */
-  --line-height-h2: 1.1;         /* 110% */
-  --line-height-h1: 1.0;         /* 100% */
+  --line-height-base: 1.5;     
+  --line-height-p: 1.5;        
+  --line-height-h6: 1.4;      
+  --line-height-h5: 1.35;    
+  --line-height-h4: 1.3;     
+  --line-height-h3: 1.2;     
+  --line-height-h2: 1.1;     
+  --line-height-h1: 1.0;      
   --line-height-code: 1.5;
   
-  /* Typography - Letter Spacing */
-  --letter-spacing-p: 0%;         /* Default */
-  --letter-spacing-h6: -0.5%;    /* Tighter */
-  --letter-spacing-h5: -0.75%;   /* Interpolated */
-  --letter-spacing-h4: -1.0%;    /* Interpolated */
-  --letter-spacing-h3: -1.5%;    /* Specified */
-  --letter-spacing-h2: -1.75%;   /* Interpolated */
-  --letter-spacing-h1: -2.0%;    /* Tightest */
+  --letter-spacing-p: 0%;        
+  --letter-spacing-h6: -0.5%;   
+  --letter-spacing-h5: -0.75%;  
+  --letter-spacing-h4: -1.0%;  
+  --letter-spacing-h3: -1.5%;  
+  --letter-spacing-h2: -1.75%;  
+  --letter-spacing-h1: -2.0%;  
   --letter-spacing-label: 0.5px;
-  
-  /* Typography - Font Weights */
+
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   
-  /* Colors - Light Mode */
   --color-text: #000;
   --color-text-secondary: #555;
   --color-text-tertiary: #777;
@@ -67,24 +58,20 @@
   --color-background-prism: #f6f8fa;
   --color-background-inline-code: rgba(175, 184, 193, 0.2);
   
-  /* Border Colors */
   --color-border: #000;
   --color-border-light: #e1e4e8;
   --color-border-medium: #d1d5da;
   --color-border-table: #000;
   
-  /* Accent Colors */
   --color-pub: #005fcc;
   --color-blog: #007f00;
   --color-tutorial: #f0c000;
   --color-focus: #005fcc;
   
-  /* Code Label Colors */
   --color-label-bg: #e1e4e8;
   --color-label-text: #586069;
   --color-label-border: #e1e4e8;
   
-  /* Syntax Highlighting - Light Mode (GitHub/Primer official colors) */
   --color-syntax-text: #24292f;
   --color-syntax-comment: #656d76;
   --color-syntax-punctuation: #24292f;
@@ -94,7 +81,6 @@
   --color-syntax-function: #8250df;
   --color-syntax-variable: #953800;
   
-  /* Spacing */
   --spacing-xs: 3px;
   --spacing-sm: 5px;
   --spacing-md: 8px;
@@ -103,7 +89,6 @@
   --spacing-xxl: 20px;
   --spacing-section: 16px;
   
-  /* Padding */
   --padding-xs: 4px;
   --padding-sm: 5px;
   --padding-md: 8px;
@@ -114,7 +99,6 @@
   --padding-label: 4px 12px;
   --padding-button: 4px 8px 4px 28px;
   
-  /* Layout */
   --max-width: 80ch;
   --min-height: calc(100vh - 20px);
   --border-width-thin: 1px;
@@ -125,19 +109,15 @@
   --border-radius-large: 6px;
   --border-radius-label: 0 6px 0 6px;
   
-  /* Z-index */
   --z-index-label: 1;
   
-  /* Icon sizes */
   --icon-size: 14px;
   
-  /* Hover effects */
   --hover-bg: rgba(0, 0, 0, 0.05);
   --outline-width: 2px;
   --outline-offset: 2px;
 }
 
-/* Dark Mode Variables */
 .dark-mode {
   --color-text: #e0e0e0;
   --color-text-secondary: #aaa;
@@ -160,7 +140,6 @@
   --color-label-text: #7d8590;
   --color-label-border: #30363d;
   
-  /* Syntax Highlighting - Dark Mode (GitHub/Primer official colors) */
   --color-syntax-text: #f0f6fc;
   --color-syntax-comment: #8b949e;
   --color-syntax-punctuation: #f0f6fc;
@@ -173,17 +152,9 @@
   --hover-bg: rgba(255, 255, 255, 0.1);
 }
 
-/* =============================================================================
-   FONT DECLARATIONS
-   ============================================================================= */
-
-@font-face {
-  font-family: 'Alpha Lyrae';
-  src: url('/fonts/AlphaLyrae-Medium.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+/* --
+FONTS
+-- */
 
 @font-face {
   font-family: 'JetBrains Mono';
@@ -225,9 +196,9 @@
   font-display: swap;
 }
 
-/* =============================================================================
-   BASE STYLES
-   ============================================================================= */
+/* ----------
+CORE ELEMENTS
+---------- */
 
 html {
   font-size: var(--font-size-base);
@@ -254,10 +225,6 @@ a {
   transition: color var(--transition-duration) var(--transition-timing), 
               text-decoration var(--transition-hover) var(--transition-timing);
 }
-
-/* =============================================================================
-   TYPOGRAPHY SYSTEM
-   ============================================================================= */
 
 p {
   font-size: var(--font-size-p);
@@ -314,14 +281,27 @@ h6 {
   margin: 0.7em 0 0.35em 0;
 }
 
+pre {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-code);
+  line-height: var(--line-height-code);
+  background-color: var(--color-background-prism);
+  border: var(--border-width-thin) solid var(--color-border-light);
+  border-radius: var(--border-radius-large);
+  padding: var(--padding-code-block);
+  margin: var(--spacing-section) 0;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              border-color var(--transition-duration) var(--transition-timing);
+}
 
-
-/* =============================================================================
-   LAYOUT COMPONENTS
-   ============================================================================= */
-
-special-header {
-  display: contents;
+code {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-code);
+  line-height: var(--line-height-code);
+  background-color: var(--color-background-inline-code);
+  padding: var(--padding-xs);
+  border-radius: var(--border-radius-small);
+  transition: background-color var(--transition-duration) var(--transition-timing);
 }
 
 table {
@@ -335,6 +315,14 @@ td {
   border: var(--border-width-medium) solid var(--color-border-table);
   overflow-wrap: break-word;
   transition: border-color var(--transition-duration) var(--transition-timing);
+}
+
+/* -------------
+SPECIAL ELEMENTS
+------------- */
+
+special-header {
+  display: contents;
 }
 
 .nav-item { 
@@ -352,19 +340,6 @@ td {
   font-weight: var(--font-weight-extrabold); 
 }
 
-pre {
-  font-family: var(--font-family-mono);
-  font-size: var(--font-size-code);
-  line-height: var(--line-height-code);
-  background-color: var(--color-background-prism);
-  border: var(--border-width-thin) solid var(--color-border-light);
-  border-radius: var(--border-radius-large);
-  padding: var(--padding-code-block);
-  margin: var(--spacing-section) 0;
-  transition: background-color var(--transition-duration) var(--transition-timing),
-              border-color var(--transition-duration) var(--transition-timing);
-}
-
 special-footer {
   display: contents;
 }
@@ -374,20 +349,10 @@ special-footer {
 }
 
 .footer-text {
-  font-size: var(--font-size-tiny);  /* Updated to use new small size */
+  font-size: var(--font-size-tiny);
   line-height: var(--line-height-base);
   color: var(--color-text-muted);
   transition: color var(--transition-duration) var(--transition-timing);
-}
-
-code {
-  font-family: var(--font-family-mono);
-  font-size: var(--font-size-code);
-  line-height: var(--line-height-code);
-  background-color: var(--color-background-inline-code);
-  padding: var(--padding-xs);
-  border-radius: var(--border-radius-small);
-  transition: background-color var(--transition-duration) var(--transition-timing);
 }
 
 .caption {
@@ -395,10 +360,6 @@ code {
   line-height: 1.3;
   margin-top: 0px;
 }
-
-/* =============================================================================
-   PUBLICATIONS & SECTIONS
-   ============================================================================= */
 
 .pub-item {
   padding: var(--padding-md);
@@ -452,10 +413,6 @@ code {
   transition: color var(--transition-duration) var(--transition-timing);
 }
 
-/* =============================================================================
-   CONTACT INFO
-   ============================================================================= */
-
 .contact-info {
 	font-size: var(--font-size-smaller);
   display: flex;
@@ -472,9 +429,9 @@ code {
   flex: 0 1 auto;
 }
 
-/* =============================================================================
-   LIGHT/DARK MODE BUTTON
-   ============================================================================= */
+/* -------------
+DARK MODE BUTTON
+------------- */
 
 .mode-button {
  background: none;
@@ -514,18 +471,10 @@ code {
  text-decoration: none;
 }
 
-/* =============================================================================
-   ACCESSIBILITY
-   ============================================================================= */
 
-:focus-visible {
-  outline: var(--outline-width) solid var(--color-focus);
-  outline-offset: var(--outline-offset);
-}
-
-/* =============================================================================
-   MEDIA QUERIES
-   ============================================================================= */
+/* ----------
+MEDIA QUERIES
+---------- */
 
 @media (max-width: 768px) {
   body {
@@ -557,9 +506,9 @@ code {
   }
 }
 
-/* =============================================================================
-   PRISM.JS SYNTAX HIGHLIGHTING WITH BLENDED LANGUAGE LABELS
-   ============================================================================= */
+/* ---------
+CODE STYLING
+--------- */
 
 /* Base code styling */
 code[class*="language-"],
@@ -700,4 +649,14 @@ pre[class*="language-r"]:before { content: "R"; }
 .token.important,
 .token.variable {
   color: var(--color-syntax-variable);
+}
+
+
+/* ---------
+RANDOM STUFF
+--------- */
+
+:focus-visible {
+  outline: var(--outline-width) solid var(--color-focus);
+  outline-offset: var(--outline-offset);
 }
