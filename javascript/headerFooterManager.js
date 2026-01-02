@@ -60,7 +60,7 @@ class SpecialFooter extends HTMLElement {
           <span>zoebjams [at] gmail [dot] com</span>
         </div>
         <div class="contact-item">
-          <span>🏛️</span>
+          <span>🚲</span>
           <span>Davis, CA</span>
         </div>
       </div>
