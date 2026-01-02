@@ -61,7 +61,7 @@ class SpecialFooter extends HTMLElement {
         </div>
         <div class="contact-item">
           <span>🏛️</span>
-          <span>UC Davis, Davis, CA</span>
+          <span>Davis, CA</span>
         </div>
       </div>
       <hr>
